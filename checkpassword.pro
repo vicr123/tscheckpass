@@ -4,7 +4,7 @@ LIBS += -lcrypt
 
 CONFIG += c++11
 
-TARGET = tchkpass
+TARGET = tscheckpass
 CONFIG += console
 CONFIG -= app_bundle
 
