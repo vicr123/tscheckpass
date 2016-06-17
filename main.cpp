@@ -37,6 +37,10 @@ int main(int argc, char *argv[])
                 qDebug() << "No password.";
                 return 0;
             } else {
+                if (arguments.count() < 3) {
+                    qDebug() << "Not enough arguments";
+                    return 1;
+                }
                 //QString tryPassword(QCryptographicHash::hash(arguments.at(2).toUtf8(), QCryptographicHash::Sha512));
                 const char *characters = (crypt(arguments.at(2).toStdString().c_str(), QString("$" + passwordParts.at(1) + "$" + passwordParts.at(2)).toStdString().c_str()));
                 QString encryptedPass(characters);
