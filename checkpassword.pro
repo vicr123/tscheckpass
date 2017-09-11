@@ -15,5 +15,8 @@ SOURCES += main.cpp
 unix {
     target.path = /usr/bin
 
-    INSTALLS += target
+    suid.path = /usr/bin
+    suid.extra = chmod u+s tscheckpass
+
+    INSTALLS += target suid
 }
